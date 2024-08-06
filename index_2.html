@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="#">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <title>Formulario de Registro</title>
+</head>
+
+<body>
+    <main>
+        <form id="registration_form" action="">
+            <fieldset>
+                <legend>Formulario de Registro</legend>
+                <div class="form-group">
+                    <label for="">Nombre:</label>
+                    <input id="nombre" class="space" type="text" placeholder="Introdzca su nombre" required>
+                    <div class="error" id="nombreError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Fecha de Nacimiento:</label>
+                    <input id="fecha" class="space" type="date" name="" required>
+                    <div class="error" id="fechaError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Teléfono:</label>
+                    <input id="telefono" class="space" type="tel" name="" placeholder="Introduzca su teléfono" required>
+                    <div class="error" id="telError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail">Email:</label>
+                    <input id="mail" class="space" type="email" name="mail" placeholder="Introduzca su email" required>
+                    <div class="error" id="mailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contra">Contraseña:</label>
+                    <input class="space" type="password" name="contra" id="contrasena" required>
+                    <div class="error" id="contraError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contra_confirma">Confirmar contraseña:</label>
+                    <input class="space" type="password" name="contraConfirm" id="contrasenaConfirma" required>
+                    <div class="error" id="contraConfirmError"></div>
+                </div>
+
+                <button type="submit" id="enviar">Registrarse</button>
+            </fieldset>
+        </form>
+
+        <!-- <script src="js/contact.js"></script> -->
+        <script src="js/contact_more_2.js"></script>
+    </main>
+
+    <footer></footer>
+</body>
+</html>
