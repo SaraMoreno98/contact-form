@@ -11,18 +11,34 @@
 
 <body>
     <main>
-        <form action="">
+        <form id="registration_form" action="get">
             <fieldset>
                 <legend>Formulario de Registro</legend>
-                <label for="">Nombre:</label>
-                <input class="space" type="text" placeholder="Introdzca su nombre" required>
-                <label for="mail">Email:</label>
-                <input class="space" type="email" name="mail" id="" placeholder="Introduzca su email" required>
-                <label for="contra">Contraseña:</label>
-                <input class="space" type="password" name="contra" id="contrasena" required>
-                <label for="contra">Confirmar contraseña:</label>
-                <input class="space" type="password" name="contra" id="contrasena_confirma" required>
-                <button>Registrarse</button>
+                <div class="form-group">
+                    <label for="">Nombre:</label>
+                    <input class="space" type="text" placeholder="Introdzca su nombre" required>
+                    <div class="error" id="nombreError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mail">Email:</label>
+                    <input class="space" type="email" name="mail" id="" placeholder="Introduzca su email" required>
+                    <div class="error" id="nombreError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contra">Contraseña:</label>
+                    <input class="space" type="password" name="contra" id="contrasena" required>
+                    <div class="error" id="nombreError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contra">Confirmar contraseña:</label>
+                    <input class="space" type="password" name="contra" id="contrasena_confirma" required>
+                    <div class="error" id="nombreError"></div>
+                </div>
+
+                <button type="submit" id="enviar">Registrarse</button>
             </fieldset>
         </form>
     </main>
