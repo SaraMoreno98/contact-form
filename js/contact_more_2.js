@@ -9,6 +9,9 @@
 
 //Capturar evento submit y toda la info del formulario
 document.getElementById('registration_form').addEventListener('submit',function(event){
+
+    event.preventDefault()
+
     let isNombreValid = validNombre()
     let isFechaValid = validFecha()
     let isTelValid = validTel()
@@ -23,9 +26,6 @@ document.getElementById('registration_form').addEventListener('submit',function(
     else{
         //alert('Por favor corrige los errores del formulario')
     }
-
-
-    event.preventDefault()
 })
 
 //FUNCIONES DE VALIDACION
@@ -50,27 +50,33 @@ function validNombre(){
 function validFecha(){
     //Validar que la fecha de nacimiento sea anterior a la actual y no mayor de 120 años
     let fechaUser = document.getElementById('fecha').value
-        console.log(fechaUser)
     let fechaActual = new Date()
-        console.log(fechaActual)
+    
     //Sacamos el año actual y le restamos 120 para que la edad no pase de ahí
-        let anyoActual = fechaActual.getFullYear()
-        let mesActual = fechaActual.getMonth()
-        let diaActual = fechaActual.getDay()
-    let fechaMinima = new Date (anyoActual - 120, mesActual, diaActual)
+    let fechaMinima = new Date (
+        fechaActual.getFullYear() - 120,
+        fechaActual.getMonth(),
+        fechaActual.getDay()
+    )
+    
+    fechaUser = new Date (fechaUser)
 
 
     let fechaErrorUser = document.getElementById('fechaError')
     let esCorrecto = true
 
-    //if(){        
-        fechaErrorUser.textContent = 'La fecha introducida no es válida'
+    if(fechaUser > fechaActual || fechaUser < fechaMinima){        
+        fechaErrorUser.textContent = 'La fecha introducida no es válida. Por favor introduzca una fecha válida'
+        document.getElementById('fecha').classList.add('error-input')
+        document.getElementById('fecha').classList.remove('success')
         esCorrecto = false
-    //}
-   //else{
-        fechaErrorTxt.textContent = ''
+    }
+   else{
+        fechaErrorUser.textContent = ''
+        document.getElementById('fecha').classList.add('success')
+        document.getElementById('fecha').classList.remove('error-input')
         esCorrecto
-    //}
+    }
 }
 
 function validTel(){
