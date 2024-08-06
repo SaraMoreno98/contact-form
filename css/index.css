@@ -61,3 +61,18 @@ button:hover{
     background-color: orange;
     font-weight: bold;
 }
+
+/* VERSION 2 JS */
+input:focus{
+    border: 1px solid;
+    outline: none;
+    border-color: rgb(87, 212, 87);
+}
+
+.success{
+    border-color: rgb(87, 212, 87) !important;
+}
+
+.error-input{
+    border-color: rgb(216, 0, 0) !important;
+}

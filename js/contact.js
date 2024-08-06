@@ -64,7 +64,7 @@ document.getElementById('registration_form').addEventListener('submit',function(
         let confirmPasswordTxt = document.getElementById('contrasenaConfirma').value
         let confirmPasswordErrorTxt = document.getElementById ('contraConfirmError')
 
-        if(confirmPasswordTxt != passwordTxt){
+        if(confirmPasswordTxt.trim() != passwordTxt.trim()){
             esCorrecto = false
             confirmPasswordErrorTxt.textContent = 'Las contraseñas no coinciden'
         }
