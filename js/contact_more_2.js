@@ -83,19 +83,20 @@ function validTel(){
     //Asegurar que el tel es un valor numérico con un + (+XX XXX XXX XXX)
     let telTxt = document.getElementById('telefono').value
     let telErrorTxt = document.getElementById('telError')
+
     let esCorrecto = true
 
-    if(telTxt.trim().length < 12){
-        telErrorTxt.textContent = 'El número introducido no es correcto'
-        document.getElementById('telefono').classList.add('error-input')
-        document.getElementById('telefono').classList.remove('success')
-        esCorrecto = false
-    }
-    else{
+    if(telTxt.trim().length < 16 && telTxt.trim().length > 6){
         telErrorTxt.textContent = ''
         document.getElementById('telefono').classList.add('success')
         document.getElementById('telefono').classList.remove('error-input')
         esCorrecto
+    }
+    else{
+        telErrorTxt.textContent = 'El número introducido no es correcto'
+        document.getElementById('telefono').classList.add('error-input')
+        document.getElementById('telefono').classList.remove('success')
+        esCorrecto = false
     }
 }
 
